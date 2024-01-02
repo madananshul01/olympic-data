@@ -1,0 +1,33 @@
+{
+    "name": "sourcedataset",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "HttpSource",
+            "type": "LinkedServiceReference",
+            "parameters": {
+                "file_name": {
+                    "value": "@dataset().file_name",
+                    "type": "Expression"
+                }
+            }
+        },
+        "parameters": {
+            "file_name": {
+                "type": "string",
+                "defaultValue": "Teams.csv"
+            }
+        },
+        "annotations": [],
+        "type": "DelimitedText",
+        "typeProperties": {
+            "location": {
+                "type": "HttpServerLocation"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+        },
+        "schema": []
+    }
+}
